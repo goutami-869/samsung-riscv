@@ -1,0 +1,85 @@
+Address: 100b0
+
+Instruction: lui a0, 0x21
+Type: U-type
+Opcode: 011011
+Immediate (imm): 0x21
+Destination Register (rd): a0
+Source Registers (rs): -
+32-bit Encoding: 0x00210537
+Explanation: Load the immediate value 0x21 into the upper 20 bits of the register a0.
+Address: 100b4
+
+Instruction: add a0, sp, a0
+Type: R-type
+Opcode: 011001
+Immediate (imm): -
+Destination Register (rd): a0
+Source Register 1 (rs1): sp
+Source Register 2 (rs2): a0
+32-bit Encoding: 0x00a000b3
+Explanation: Add the values in sp and a0, store the result in a0.
+Address: 100b8
+
+Instruction: sd a0, 8(sp)
+Type: S-type
+Opcode: 010001
+Immediate (imm): 0x8
+Destination Register (rd): -
+Source Register 1 (rs1): sp
+Source Register 2 (rs2): a0
+32-bit Encoding: 0x00a00223
+Explanation: Store the 64-bit value in register a0 at memory address sp + 8.
+Address: 100bc
+
+Instruction: sd a5, 16(sp)
+Type: S-type
+Opcode: 010001
+Immediate (imm): 0x10
+Destination Register (rd): -
+Source Register 1 (rs1): sp
+Source Register 2 (rs2): a5
+32-bit Encoding: 0x00a002a3
+Explanation: Store the 64-bit value in register a5 at memory address sp + 16.
+Address: 100c0
+
+Instruction: call 0x2129c
+Type: J-type
+Opcode: 110111
+Immediate (imm): 0x2129c
+Destination Register (rd): -
+Source Registers (rs): -
+32-bit Encoding: 0x00a200e7
+Explanation: Jump to the subroutine at the absolute address 0x2129c. Save the return address in ra.
+Address: 100c4
+
+Instruction: ld a0, 8(sp)
+Type: I-type
+Opcode: 010000
+Immediate (imm): 0x8
+Destination Register (rd): a0
+Source Register (rs1): sp
+Source Register 2 (rs2): -
+32-bit Encoding: 0x00a20003
+Explanation: Load the 64-bit value from memory address sp + 8 into register a0.
+Address: 100c8
+
+Instruction: call printf
+Type: J-type
+Opcode: 110111
+Immediate (imm): -
+Destination Register (rd): -
+Source Registers (rs): -
+32-bit Encoding: 0x00a0006f
+Explanation: Call the printf function.
+Address: 10120
+
+Instruction: ret
+Type: I-type
+Opcode: 110001
+Immediate (imm): -
+Destination Register (rd): -
+Source Register (rs1): ra
+Source Register 2 (rs2): -
+32-bit Encoding: 0x00008067
+Explanation: Return from the function by setting the program counter (PC) to the value in ra.
